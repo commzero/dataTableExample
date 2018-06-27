@@ -1,0 +1,70 @@
+<div class="text-center">
+  <p>Trips-list</p>
+</div>
+<div class="from-group col-lg-3">
+  <input type="search" class="form-control btn-rounded" (keyup.enter)="getTripDetails()" placeholder="Search" [(ngModel)]="trips._id">
+</div>
+<button type="button" class="btn btn-default btn-rounded" (click)="getTripDetails()">Search</button>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive padding-none-xs">
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th class="text-center">ID</th>
+      <th class="text-center">User ID</th>
+      <th class="text-center">Shipment Type</th>
+      <th class="text-center">Start Point</th>
+      <th class="text-center">Destination Point</th>
+      <th class="text-center">Cost (After Discount)</th>
+      <th class="text-center">Details</th>
+    </tr>
+    <tr *ngFor="let trip of trips; let i of index;">
+      <td>{{trip._id}}</td>
+      <td>{{trip.userId}}</td>
+      <td>{{trip.shipmentType}}</td>
+      <td>{{trip.startPoint}}</td>
+      <td>{{trip.destinationPoint}}</td>
+      <td>{{trip.costAfterDiscount}}</td>
+      <td class="text-center">
+        <a (click)="openInfoModal(trip)" class="color-black">
+          <i>Info</i>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="text-center">
+  <p>Users-list</p>
+</div>
+<div class="from-group col-lg-3">
+  <input type="search" class="form-control btn-rounded" (keyup.enter)="getUserDetails()" placeholder="Search" [(ngModel)]="users.fullName">
+</div>
+<button type="button" class="btn btn-default btn-rounded" (click)="getUserDetails()">Search</button>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive padding-none-xs">
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th class="text-center">User ID</th>
+      <th class="text-center">Picture</th>
+      <th class="text-center">Full Name</th>
+      <th class="text-center">Mobile</th>
+      <th class="text-center">E-mail</th>
+      <th class="text-center">User Name</th>
+      <th class="text-center">Gender</th>
+      <th class="text-center">Verified</th>
+    </tr>
+    <tr *ngFor="let user of users; let i of index;">
+      <td>{{user.id}}</td>
+      <td class="text-center">
+        <img [src]="user.picture" class="img-responsive thumb category-icon img-centar">
+      </td>
+      <td>{{user.fullName}}</td>
+      <td>{{user.mobile}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.username}}</td>
+      <td *ngIf="user.gender == 0">Male</td>
+      <td *ngIf="user.gender == 1">Female</td>
+      <td class="text-center">
+        <i [class.fa-check]="user.isVerified" class="fa"></i>
+      </td>
+    </tr>
+  </table>
+</div>
