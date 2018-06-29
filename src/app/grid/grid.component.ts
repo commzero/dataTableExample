@@ -4,6 +4,7 @@ import { TripService } from '../services/trip.service';
 import { UserService } from '../services/user.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 import { GridDetailsComponent } from './grid-details/grid-details.component';
+interface tripsList { _id?: number }
 
 
 @Component({
@@ -12,9 +13,11 @@ import { GridDetailsComponent } from './grid-details/grid-details.component';
   styleUrls: ['./grid.component.css']
 })
 export class GridComponent implements OnInit {
-  trips: any = {};
+  trips: tripsList = {};
   users: any = {};
   openTripInfoModal: BsModalRef;
+  key = '';
+  reverse = false;
   constructor(
     private spinner: NgxSpinnerService,
     private tripService: TripService,
@@ -60,5 +63,9 @@ export class GridComponent implements OnInit {
       }
       this.openTripInfoModal.hide();
     }
+  }
+  sortList(key) {
+    this.key = key;
+    this.reverse = !this.reverse;
   }
 }

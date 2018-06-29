@@ -1,3 +1,124 @@
-<p>
-  {{trip._id}}
-</p>
+<div class="row details-style">
+  <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+    <h5>Trip Details</h5>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>ID</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>{{trip._id}}</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>Type</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>{{trip.shipmentType}}</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>Start Point</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>{{trip.startPoint}}</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>Destination Point</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>{{trip.destinationPoint}}</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>Cost After Discount</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>{{trip.costAfterDiscount}}</span>
+  </div>
+  <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+    <h5>User Details</h5>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>User ID</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>{{userDetails.id}}</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>Picture</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <img width="50" [src]="userDetails.picture" class="img-responsive thumb category-icon">
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>Full Name</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>{{userDetails.fullName}}</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>User Date Created</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>{{userDetails.createdAt | date}}</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>Mobile</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>{{userDetails.mobile}}</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>E-mail</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>{{userDetails.email}}</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>User Name</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>{{userDetails.username}}</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>Gender</span>
+  </div>
+  <div *ngIf="userDetails.gender == 0" class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>Male</span>
+  </div>
+  <div *ngIf="userDetails.gender == 1" class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>Female</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>Verified</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span [class.fa-check]="userDetails.isVerified" class="fa"></span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>Facebook</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span [class.fa-facebook-official]="userDetails.isFacebook" class="fa"></span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>Instagram</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span [class.fa-instagram]="userDetails.isInstagram" class="fa"></span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>Google Plus</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span [class.fa-google-plus]="userDetails.isGoogle" class="fa"></span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span>Twitter</span>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 padding">
+    <span [class.fa-twitter-square]="userDetails.isTwitter" class="fa"></span>
+  </div>
+  <div class="col-md-12 col-sm-12 col-xs-12 text-center padding">
+    <button type="button" aria-label="Close" (click)="saveModal.hide()" class="btn btn-to-department pull-right">
+      Close
+    </button>
+  </div>
+</div>

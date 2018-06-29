@@ -14,4 +14,8 @@ export class UserService {
     const apiUrl: string = environment.apiBaseUrl + '/api/v1/users';
     return this.http.get<any[]>(apiUrl);
   }
+  public getUserById(id: number): any {
+    const apiUrl: string = environment.apiBaseUrl + '/api/v1/users/' + id;
+    return this.http.get<any[]>(apiUrl);
+  }
 }

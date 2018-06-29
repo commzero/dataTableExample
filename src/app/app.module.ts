@@ -11,10 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { PaginationModule, BsModalService, BsModalRef } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
-
-
-
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { DatePipe } from '@angular/common';
+import { Ng2OrderModule } from 'ng2-order-pipe'
 
 @NgModule({
   declarations: [
@@ -29,11 +28,14 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     BrowserModule,
     NgxSpinnerModule,
     FormsModule,
+    Ng2SearchPipeModule,
+    Ng2OrderModule
   ],
   providers: [
     BsModalService,
     TripService,
-    UserService
+    UserService,
+    DatePipe
   ],
   entryComponents: [
     GridDetailsComponent
